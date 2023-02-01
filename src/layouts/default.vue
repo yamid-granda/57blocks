@@ -1,5 +1,7 @@
 <template>
   <main>
-    <RouterView />
+    <AppContainer>
+      <RouterView />
+    </AppContainer>
   </main>
 </template>
