@@ -6,6 +6,7 @@ import type { UserModule } from './types'
 import generatedRoutes from '~pages'
 
 import './styles/main.css'
+import '~/styles/reset.scss'
 
 const routes = setupLayouts(generatedRoutes)
 
