@@ -2,25 +2,20 @@
 
 .header-anchor {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 0;
-  // right: 0;
   top: 0.1em;
   bottom: 0;
-  font-size: 1em;
+  left: 0;
   left: -1.1em;
+  display: flex;
   width: 1.1em;
   height: 1.1em;
-  // float: left;
-  // margin-left: -0.87em;
-  // padding-right: 0.23em;
-  // margin-top: 0;
-  text-decoration: none;
-  opacity: 0;
-  background-color: $color-input-background;
+  align-items: center;
+  justify-content: center;
   border-radius: 1em;
+  background-color: $color-input-background;
+  font-size: 1em;
+  opacity: 0;
+  text-decoration: none;
   transition: $transition-base;
 }
 

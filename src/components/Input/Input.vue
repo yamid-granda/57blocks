@@ -248,11 +248,6 @@ $input-label-padding: $input-padding;
   &:-webkit-input-placeholder {
     color: $color-text-light;
   }
-
-  /* Microsoft Edge */
-  &::input-placeholder {
-    color: $color-text-light;
-  }
 }
 
 .ss-input__prepend-text,
