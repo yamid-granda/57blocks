@@ -8,9 +8,16 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppContainer: typeof import('./components/AppContainer/AppContainer.vue')['default']
+    Button: typeof import('./components/Button/Button.vue')['default']
+    'Button.story': typeof import('./components/Button/Button.story.vue')['default']
+    FormItem: typeof import('./components/FormItem/FormItem.vue')['default']
+    Input: typeof import('./components/Input/Input.vue')['default']
+    Login: typeof import('./components/Login/Login.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Spinner: typeof import('./components/Spinner/Spinner.vue')['default']
+    SVG: typeof import('./components/SVG/SVG.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     TheInput: typeof import('./components/TheInput.vue')['default']
