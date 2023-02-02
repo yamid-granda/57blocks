@@ -1,0 +1,10 @@
+node_modules
+bin
+obj
+Dockerfile
+LICENSE
+public
+*.*
+!*.css
+!*.scss
+!*.vue
