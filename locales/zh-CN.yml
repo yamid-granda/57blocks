@@ -1,1 +1,10 @@
-not-found: 未找到
+$components:
+  Login:
+    invalidCredentialsError: 密码或电子邮件无效
+Email: 电子邮件
+Login: 登录
+Password: 密码
+invalidEmail: 不是有效的电子邮件
+invalidMaxLength: 最大允许长度为 {max}
+invalidMinLength: 所需的最小长度为 {min}
+not-found: 未找到;

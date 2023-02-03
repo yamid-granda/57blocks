@@ -1,1 +1,10 @@
-not-found: Không tìm thấy
+$components:
+  Login:
+    invalidCredentialsError: Mật khẩu hoặc email không hợp lệ
+Email: E-mail
+Login: Đăng nhập
+Password: Mật khẩu
+invalidEmail: Không phải là một email hợp lệ
+invalidMaxLength: Độ dài tối đa cho phép là {max}
+invalidMinLength: Độ dài yêu cầu tối thiểu là {min}
+not-found: không tìm thấy;

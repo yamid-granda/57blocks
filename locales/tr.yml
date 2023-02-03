@@ -1,1 +1,10 @@
-not-found: Bulunamadı
+$components:
+  Login:
+    invalidCredentialsError: Geçersiz şifre veya e-posta
+Email: E-posta
+Login: Giriş yapmak
+Password: Şifre
+invalidEmail: geçerli bir e-posta değil
+invalidMaxLength: 'İzin verilen maksimum uzunluk: {max}'
+invalidMinLength: Gerekli minimum uzunluk {min}
+not-found: bulunamadı;

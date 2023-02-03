@@ -1,1 +1,10 @@
-not-found: 찾을 수 없음
+$components:
+  Login:
+    invalidCredentialsError: 잘못된 비밀번호 또는 이메일
+Email: 이메일
+Login: 로그인
+Password: 비밀번호
+invalidEmail: 유효한 이메일이 아닙니다.
+invalidMaxLength: 최대 허용 길이는 {max}입니다.
+invalidMinLength: 최소 필수 길이는 {min}입니다.
+not-found: 찾을 수 없음;

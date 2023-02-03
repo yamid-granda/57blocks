@@ -1,1 +1,10 @@
-not-found: არ მოიძებნა
+$components:
+  Login:
+    invalidCredentialsError: არასწორი პაროლი ან ელფოსტა
+Email: ელფოსტა
+Login: Შესვლა
+Password: პაროლი
+invalidEmail: არ არის სწორი ელფოსტა
+invalidMaxLength: მაქსიმალური დასაშვები სიგრძეა {max}
+invalidMinLength: მინიმალური საჭირო სიგრძეა {min}
+not-found: არ მოიძებნა;

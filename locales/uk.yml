@@ -1,1 +1,10 @@
-not-found: Не знайдено
+$components:
+  Login:
+    invalidCredentialsError: Невірний пароль або адреса електронної пошти
+Email: Електронна пошта
+Login: Логін
+Password: Пароль
+invalidEmail: Не є дійсною електронною поштою
+invalidMaxLength: Максимально дозволена довжина становить {max}
+invalidMinLength: Мінімальна необхідна довжина становить {min}
+not-found: не знайдено;

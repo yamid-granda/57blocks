@@ -1,1 +1,10 @@
-not-found: Не найден
+$components:
+  Login:
+    invalidCredentialsError: Неверный пароль или адрес электронной почты
+Email: Электронная почта
+Login: Авторизоваться
+Password: Пароль
+invalidEmail: Недействительный адрес электронной почты
+invalidMaxLength: Максимально допустимая длина {max}
+invalidMinLength: 'Минимальная необходимая длина: {min}'
+not-found: не найден;

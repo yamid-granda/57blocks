@@ -1,1 +1,10 @@
-not-found: 見つかりません
+$components:
+  Login:
+    invalidCredentialsError: パスワードまたは電子メールが無効です
+Email: Eメール
+Login: ログイン
+Password: パスワード
+invalidEmail: 有効な電子メールではありません
+invalidMaxLength: 最大許容長は {max} です
+invalidMinLength: 必要な最小の長さは {min} です
+not-found: 見つかりません;

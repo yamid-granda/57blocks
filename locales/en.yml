@@ -1,1 +1,15 @@
+# common
 not-found: Not found
+Email: Email
+Password: Password
+Login: Login
+
+# validation
+invalidEmail: Is not a valid email
+invalidMinLength: The min required length is {min}
+invalidMaxLength: The max allowed length is {max}
+
+# components
+$components:
+  Login:
+    invalidCredentialsError: Invalid password or email

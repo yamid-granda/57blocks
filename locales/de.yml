@@ -1,1 +1,10 @@
-not-found: Nicht gefunden
+$components:
+  Login:
+    invalidCredentialsError: Ungültiges Passwort oder E-Mail
+Email: Email
+Login: Anmeldung
+Password: Passwort
+invalidEmail: Ist keine gültige E-Mail
+invalidMaxLength: Die maximal zulässige Länge beträgt {max}
+invalidMinLength: Die erforderliche Mindestlänge beträgt {min}
+not-found: nicht gefunden;

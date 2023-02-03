@@ -1,1 +1,10 @@
-not-found: Tidak ditemukan
+$components:
+  Login:
+    invalidCredentialsError: Kata sandi atau email tidak valid
+Email: Surel
+Login: Gabung
+Password: Kata sandi
+invalidEmail: Bukan email yang valid
+invalidMaxLength: Panjang maksimum yang diizinkan adalah {max}
+invalidMinLength: Panjang min yang dibutuhkan adalah {min}
+not-found: tidak ditemukan;

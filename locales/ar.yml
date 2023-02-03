@@ -1,1 +1,10 @@
-not-found: لم يتم العثور على
+$components:
+  Login:
+    invalidCredentialsError: كلمة المرور أو البريد الإلكتروني غير صحيح
+Email: بريد إلكتروني
+Login: تسجيل الدخول
+Password: كلمة المرور
+invalidEmail: ليس بريدًا إلكترونيًا صالحًا
+invalidMaxLength: أقصى طول مسموح به هو {max}
+invalidMinLength: الطول الأدنى المطلوب هو {min}
+not-found: لم يتم العثور على;
