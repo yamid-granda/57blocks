@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { notify } from '~/composables/pageNotifications'
 import { ViewPath } from '~/configs/ViewPath'
-import { loginUser } from '~/services/login'
+import { loginUser } from '~/services/http/login'
 import { useDicValidator } from '~/composables/dicValidator'
 import { isEmail, isMaxLength, isMinLength } from '~/composables/dicValidator/rules'
 import type { ValidationsDic } from '~/composables/dicValidator/types'
