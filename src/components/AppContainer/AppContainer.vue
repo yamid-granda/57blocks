@@ -3,6 +3,8 @@
 <template>
   <div class="ss-app-container">
     <slot />
+
+    <PageNotifications />
   </div>
 </template>
 
