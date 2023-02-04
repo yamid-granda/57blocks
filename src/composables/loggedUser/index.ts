@@ -1,3 +1,5 @@
+import { addLoggedUserInLocalStorage, removeLoggedUserFromLocalStorage } from '~/services/localStorage/loggedUser'
+
 export interface LoggedUser {
   id: string
   email: string
@@ -11,8 +13,10 @@ export const isUserLoggedIn = computed<boolean>(() => Boolean(loggedUser.value.e
 
 export function setLoggedUser(user: LoggedUser): void {
   loggedUser.value = user
+  addLoggedUserInLocalStorage(user)
 }
 
 export function removeLoggedUser(): void {
+  removeLoggedUserFromLocalStorage()
   loggedUser.value = emptyUser
 }
