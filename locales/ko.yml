@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: 잘못된 비밀번호 또는 이메일
 Email: 이메일
+Favorites: 즐겨찾기
+Home: 집
 Login: 로그인
 Password: 비밀번호
 invalidEmail: 유효한 이메일이 아닙니다.

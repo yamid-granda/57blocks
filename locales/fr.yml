@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: Mot de passe ou email invalide
 Email: E-mail
+Favorites: Favoris
+Home: Maison
 Login: Connexion
 Password: Mot de passe
 invalidEmail: N'est pas un email valide

@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: Невірний пароль або адреса електронної пошти
 Email: Електронна пошта
+Favorites: Вибране
+Home: додому
 Login: Логін
 Password: Пароль
 invalidEmail: Не є дійсною електронною поштою

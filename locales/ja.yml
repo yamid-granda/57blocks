@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: パスワードまたは電子メールが無効です
 Email: Eメール
+Favorites: お気に入り
+Home: 家
 Login: ログイン
 Password: パスワード
 invalidEmail: 有効な電子メールではありません

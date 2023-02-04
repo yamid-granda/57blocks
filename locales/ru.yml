@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: Неверный пароль или адрес электронной почты
 Email: Электронная почта
+Favorites: Избранное
+Home: Дом
 Login: Авторизоваться
 Password: Пароль
 invalidEmail: Недействительный адрес электронной почты

@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: არასწორი პაროლი ან ელფოსტა
 Email: ელფოსტა
+Favorites: რჩეულები
+Home: მთავარი
 Login: Შესვლა
 Password: პაროლი
 invalidEmail: არ არის სწორი ელფოსტა

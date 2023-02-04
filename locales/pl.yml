@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: Nieprawidłowe hasło lub adres e-mail
 Email: E-mail
+Favorites: Ulubione
+Home: Dom
 Login: Zaloguj sie
 Password: Hasło
 invalidEmail: To nie jest prawidłowy adres e-mail

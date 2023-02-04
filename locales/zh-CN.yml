@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: 密码或电子邮件无效
 Email: 电子邮件
+Favorites: 收藏夹
+Home: 家
 Login: 登录
 Password: 密码
 invalidEmail: 不是有效的电子邮件

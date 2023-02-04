@@ -2,6 +2,8 @@ $components:
   Login:
     invalidCredentialsError: Kata sandi atau email tidak valid
 Email: Surel
+Favorites: Favorit
+Home: Rumah
 Login: Gabung
 Password: Kata sandi
 invalidEmail: Bukan email yang valid

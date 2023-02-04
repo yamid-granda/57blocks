@@ -3,6 +3,8 @@ not-found: Not found
 Email: Email
 Password: Password
 Login: Login
+Home: Home
+Favorites: Favorites
 
 # validation
 invalidEmail: Is not a valid email
