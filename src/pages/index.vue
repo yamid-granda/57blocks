@@ -1,5 +1,9 @@
+<script lang="ts" setup>
+import PokemonsViewer from '~/modules/Pokemon/components/PokemonsViewer/PokemonsViewer.vue'
+</script>
+
 <template>
   <div>
-    hello world
+    <PokemonsViewer />
   </div>
 </template>
