@@ -1,5 +1,5 @@
+import type { ApiRes } from '~/clients/http'
 import type { LoggedUser } from '~/composables/loggedUser'
-import type { ApiRes } from '~/types/api'
 
 interface DummyUser {
   id: string
@@ -28,7 +28,7 @@ export async function loginUser(config: LoginUserConfig): Promise<ApiRes<LoggedU
       const validResult: ApiRes<LoggedUser> = {
         isOk: true,
         result: {
-          email: dummyUser.password,
+          email: config.email,
           id: dummyUser.id,
         },
       }
