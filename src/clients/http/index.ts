@@ -56,7 +56,10 @@ async function httpRequest<Result>(path: string, config: HttpReqConfig): Promise
   }
 }
 
-export async function httpGet<Result>(path: string, config: HttpReqConfig): Promise<ApiRes<Result>> {
+export async function httpGet<Result>(
+  path: string,
+  config: HttpReqConfig = {},
+): Promise<ApiRes<Result>> {
   return httpRequest(path, {
     ...config,
     config: {
