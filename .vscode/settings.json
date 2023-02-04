@@ -10,6 +10,7 @@
     "composables",
     "nprogress",
     "stylelint",
+    "pokemons",
     "pnpm"
   ],
   "i18n-ally.sourceLanguage": "en",
