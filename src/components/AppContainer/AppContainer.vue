@@ -10,7 +10,7 @@
 
 <style lang="scss">
 .ss-app-container {
-  padding: $spacing-6 $gutter-page $gutter-page;
+  padding: $gutter-page;
 }
 
 @include lg {
