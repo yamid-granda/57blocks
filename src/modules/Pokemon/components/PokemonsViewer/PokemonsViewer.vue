@@ -4,6 +4,7 @@ import { POKEMON_LIST_LIMIT } from '../../configs'
 import { getPokemons, getPokemonsByText } from '../../services/http/pokemon'
 import type { Pokemon } from '../../types'
 import PokemonList from '../PokemonList/PokemonList.vue'
+import { DEBOUNCE_MILLISECONDS } from '~/configs/duration'
 
 const { t } = useI18n()
 
@@ -55,7 +56,7 @@ const onSearchPokemons = debounce(async () => {
 
   pokemons.value = response.result
   isLoadingPokemons.value = false
-}, 400)
+}, DEBOUNCE_MILLISECONDS)
 
 function onCreate() {
   getItems()
