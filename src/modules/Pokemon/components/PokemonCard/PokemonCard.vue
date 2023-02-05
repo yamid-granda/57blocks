@@ -59,6 +59,13 @@ function onFavoriteClick() {
   }
 }
 
+.ss-pokemon-card__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $spacing-5 auto $spacing-10;
+}
+
 .ss-pokemon-card__id {
   position: absolute;
   bottom: $input-padding;

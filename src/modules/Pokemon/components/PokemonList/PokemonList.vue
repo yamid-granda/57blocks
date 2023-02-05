@@ -56,11 +56,6 @@ $pagination-height: 72px;
   grid-template-columns: repeat(auto-fit, minmax(156px, auto));
 
   .ss-pokemon-card__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: $spacing-5 auto $spacing-7;
-
     img {
       max-width: 240px;
       height: 120px;
