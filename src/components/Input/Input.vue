@@ -28,11 +28,12 @@ const props = withDefaults(defineProps<InputProps>(), {
 
 const emit = defineEmits<{
   (event: 'update:model-value', value: string, $event: InputEvent): void
+  (event: 'input', value: string, $event: InputEvent): void
   (event: 'focus', data: InputEmitData): void
   (event: 'blur', data: InputEmitData): void
   (event: 'click'): void
-  (event: 'prependClick'): void
-  (event: 'appendClick'): void
+  (event: 'prepend-click'): void
+  (event: 'append-click'): void
 }>()
 
 const slots = useSlots()
@@ -70,6 +71,7 @@ watch(() => props.appendIcon, (iconName) => {
 const onInput = ($event: InputEvent) => {
   const { value } = $event.target as HTMLInputElement
   emit('update:model-value', value, $event)
+  emit('input', value, $event)
 }
 
 const onFocus = ($event: InputEvent) => {
@@ -87,11 +89,11 @@ function onClick() {
 }
 
 function onPrependClick() {
-  emit('prependClick')
+  emit('prepend-click')
 }
 
 function onAppendClick() {
-  emit('appendClick')
+  emit('append-click')
 }
 
 function setPrependIcon(iconName: string) {
