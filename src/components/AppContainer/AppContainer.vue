@@ -26,9 +26,9 @@
 }
 
 .ss-app-container__transition {
-  filter: blur($spacing-4) sepia(1);
+  filter: blur($spacing-2);
   opacity: 0;
-  transform: scale(50%);
+  transform: scale(80%);
 }
 
 .ss-app-container__transition-active {
