@@ -1,4 +1,5 @@
 import type { ApiPath } from '~/configs/ApiPath'
+import type { ImgPath } from '~/configs/ImgPath'
 import type { ViewPath } from '~/configs/ViewPath'
 
 type IsParameter<Part> = Part extends `{${infer ParamName}}` ? ParamName : never
@@ -17,7 +18,7 @@ interface GetPathConfig<PathParam> {
   searchParams?: Record<string, string>
 }
 
-export function getPath<PathParam extends ViewPath | ApiPath>(
+export function getPath<PathParam extends ViewPath | ApiPath | ImgPath>(
   path: PathParam,
   config?: GetPathConfig<PathParam>,
 ): string {
