@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Pokemon } from '../../types'
+import PokemonImg from '../PokemonImg/PokemonImg.vue'
 
 interface PokemonCardProps {
   pokemon: Pokemon
@@ -25,30 +26,20 @@ function onFavoriteClick() {
     test-id="pokemon-card"
   >
     <Card>
-      <div class="ss-pokemon-card__img">
-        <img
-          :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${pokemon.id}.png`"
-          :alt="pokemon.name"
-          onerror="this.src='https://www.svgrepo.com/show/276264/pokeball-pokemon.svg'"
-        >
+      <div class="ss-pokemon-card__name">
+        {{ pokemon.id }}
+        {{ pokemon.name }}
       </div>
 
-      <div class="ss-pokemon-card__info">
-        <div class="ss-pokemon-card__name">
-          {{ pokemon.id }}
-          {{ pokemon.name }}
-        </div>
+      <div class="ss-pokemon-card__img">
+        <PokemonImg :pokemon="pokemon" />
+      </div>
 
-        <div class="ss-pokemon-card__actions">
-          <Button
-            class="ss-pokemon-card__favorite"
-            icon="heart"
-            design="secondary"
-            size="sm"
-            test-id="favorite"
-            @click="onFavoriteClick"
-          />
-        </div>
+      <div class="ss-pokemon-card__actions">
+        <FavoriteButton
+          :is-active="pokemon.isFavorite"
+          @click.prevent="onFavoriteClick"
+        />
       </div>
     </Card>
   </div>
@@ -63,29 +54,22 @@ function onFavoriteClick() {
   }
 }
 
-.ss-pokemon-card__info {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-top: $spacing-6;
-  border-top: $border-base;
-  margin-top: $spacing-4;
-}
+.ss-pokemon-card__img {
+  width: 116px;
+  height: 160px;
 
-.ss-pokemon-card__name {
-  text-transform: capitalize;
-}
-
-.ss-pokemon-card--favorite {
-  .ss-pokemon-card__favorite {
-    path {
-      fill: $color-danger;
-      stroke: $color-danger;
-    }
+  img {
+    max-height: 320px;
   }
 }
 
 .ss-pokemon-card__actions {
-  margin-left: $spacing-3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ss-pokemon-card__name {
+  font-weight: $bold;
+  text-transform: capitalize;
 }
 </style>
