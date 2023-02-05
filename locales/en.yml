@@ -16,3 +16,5 @@ invalidMaxLength: The max allowed length is {max}
 $components:
   Login:
     invalidCredentialsError: Invalid password or email
+  FavoritePokemonsViewer:
+    notFoundError: You not has favorite pokemons
