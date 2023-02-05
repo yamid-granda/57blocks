@@ -3,7 +3,7 @@ import PokemonCard from '../PokemonCard/PokemonCard.vue'
 import { POKEMON_LIST_LIMIT } from '../../configs'
 import { getPokemons } from '../../services/http/pokemon'
 import type { Pokemon } from '../../types'
-import { addFavoritePokemonInLocalStorage, removeFavoritePokemonFromLocalStorage } from '../../services/localStorage/pokemon'
+import toggleFavoritePokemon from '../../utils/toggleFavoritePokemon'
 import { ViewPath } from '~/configs/ViewPath'
 import { getPath } from '~/utils/getPath'
 
@@ -32,14 +32,7 @@ function onPaginationChange(page: number) {
 }
 
 function onPickFavorite(pokemon: Pokemon) {
-  if (pokemon.isFavorite) {
-    pokemon.isFavorite = false
-    removeFavoritePokemonFromLocalStorage(pokemon)
-    return
-  }
-
-  pokemon.isFavorite = true
-  addFavoritePokemonInLocalStorage(pokemon)
+  toggleFavoritePokemon(pokemon)
 }
 
 function onCreate() {
