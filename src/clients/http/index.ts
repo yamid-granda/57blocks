@@ -1,3 +1,5 @@
+import { BaseUrl } from '~/configs/BaseUrl'
+
 interface SuccessApiRes<Result> {
   isOk: true
   result: Result
@@ -20,6 +22,8 @@ export interface HttpReqConfig {
   config?: RequestInit
   type?: 'json'
   params?: HttpReqParams
+  baseUrl?: string
+  body?: Record<string, unknown>
 }
 
 interface HttpReqParams {
@@ -27,17 +31,20 @@ interface HttpReqParams {
   offset?: number
 }
 
-const BASE_URL = 'https://pokeapi.co/api/v2'
-
 async function httpRequest<Result>(path: string, config: HttpReqConfig): Promise<ApiRes<Result>> {
-  let strSearchParams = ''
+  const baseUrl = config.baseUrl || BaseUrl.DEFAULT
 
+  let body: string | undefined
+  if (config.body)
+    body = JSON.stringify(config.body)
+
+  let strSearchParams = ''
   if (config.params)
     strSearchParams = `?${new URLSearchParams(config.params as Record<string, string>).toString()}`
 
   try {
-    const url = `${BASE_URL}${path}${strSearchParams}`
-    const res = await fetch(url, config.config)
+    const url = `${baseUrl}${path}${strSearchParams}`
+    const res = await fetch(url, { ...config.config, body })
     const resType = config.type || 'json'
     const result = await res[resType]()
 
@@ -65,6 +72,19 @@ export async function httpGet<Result>(
     config: {
       ...config.config,
       method: 'GET',
+    },
+  })
+}
+
+export async function httpPost<Result>(
+  path: string,
+  config: HttpReqConfig = {},
+): Promise<ApiRes<Result>> {
+  return httpRequest(path, {
+    ...config,
+    config: {
+      ...config.config,
+      method: 'POST',
     },
   })
 }
