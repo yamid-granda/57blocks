@@ -63,7 +63,6 @@ withDefaults(defineProps<NavigationProps>(), {
   bottom: 0;
   left: 0;
   background-color: $color-paper-2;
-  opacity: $opacity-base;
   transition: $transition-base;
 }
 </style>
