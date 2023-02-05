@@ -20,3 +20,4 @@ $components:
     notFoundError: You not has favorite pokemons
   PokemonsViewer:
     searchByName: Search pokemon by text name
+    noPokemonsError: No pokemons found

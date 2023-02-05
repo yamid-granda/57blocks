@@ -15,6 +15,7 @@ const searchText = ref<string>('')
 const isLoadingPokemons = ref<boolean>(false)
 
 const paginationLength = computed(() => Math.ceil(totalPokemons.value / POKEMON_LIST_LIMIT))
+const hasPokemons = computed<boolean>(() => Boolean(pokemons.value.length))
 
 async function getItems(page = 1) {
   isLoadingPokemons.value = true
@@ -82,8 +83,14 @@ onCreate()
 
     <Loader v-show="isLoadingPokemons" />
 
+    <template v-if="!hasPokemons">
+      <Alert state="warning">
+        {{ t('$components.PokemonsViewer.noPokemonsError') }}
+      </Alert>
+    </template>
+
     <PokemonList
-      v-show="!isLoadingPokemons"
+      v-show="!isLoadingPokemons && hasPokemons"
       :pokemons="pokemons"
     />
 
