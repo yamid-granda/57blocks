@@ -72,7 +72,11 @@ function onFavoriteClick() {
 }
 
 .ss-pokemon-card__name {
+  overflow: hidden;
+  width: 100%;
   font-weight: $bold;
+  text-overflow: ellipsis;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 </style>
