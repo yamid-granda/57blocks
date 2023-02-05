@@ -89,10 +89,12 @@ function onClick() {
 }
 
 function onPrependClick() {
+  inputElement.value?.focus()
   emit('prepend-click')
 }
 
 function onAppendClick() {
+  inputElement.value?.focus()
   emit('append-click')
 }
 

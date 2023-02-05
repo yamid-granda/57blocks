@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { debounce } from 'lodash'
 import { POKEMON_LIST_LIMIT } from '../../configs'
 import { getPokemons, getPokemonsByText } from '../../services/http/pokemon'
 import type { Pokemon } from '../../types'
@@ -10,42 +11,51 @@ const pokemons = ref<Pokemon[]>([])
 const page = ref<number>(1)
 const totalPokemons = ref<number>(0)
 const searchText = ref<string>('')
+const isLoadingPokemons = ref<boolean>(false)
 
 const paginationLength = computed(() => Math.ceil(totalPokemons.value / POKEMON_LIST_LIMIT))
 
 async function getItems(page = 1) {
+  isLoadingPokemons.value = true
   const response = await getPokemons({
     offset: (page - 1) * POKEMON_LIST_LIMIT,
   })
 
-  if (!response.isOk)
-    return
-
-  const { result } = response
-
-  totalPokemons.value = result.count
-  pokemons.value = result.results
-}
-
-function onPaginationChange(page: number) {
-  getItems(page)
-}
-
-async function onSearchPokemons() {
-  const text = searchText.value.toLowerCase()
-
-  if (!text) {
-    getItems()
+  if (!response.isOk) {
+    isLoadingPokemons.value = false
     return
   }
 
+  const { result } = response
+  totalPokemons.value = result.count
+  pokemons.value = result.results
+  isLoadingPokemons.value = false
+}
+
+function onPaginationChange(page: number) {
+  searchText.value = ''
+  getItems(page)
+}
+
+const onSearchPokemons = debounce(async () => {
+  const text = searchText.value.toLowerCase().trim()
+
+  if (!text) {
+    getItems(page.value)
+    return
+  }
+
+  isLoadingPokemons.value = true
   const response = await getPokemonsByText(text)
 
-  if (!response.isOk)
+  if (!response.isOk) {
+    isLoadingPokemons.value = false
     return
+  }
 
   pokemons.value = response.result
-}
+  isLoadingPokemons.value = false
+}, 400)
 
 function onCreate() {
   getItems()
@@ -69,7 +79,12 @@ onCreate()
       />
     </div>
 
-    <PokemonList :pokemons="pokemons" />
+    <Loader v-show="isLoadingPokemons" />
+
+    <PokemonList
+      v-show="!isLoadingPokemons"
+      :pokemons="pokemons"
+    />
 
     <div class="ss-pokemons-viewer__pagination">
       <AppWrap>
