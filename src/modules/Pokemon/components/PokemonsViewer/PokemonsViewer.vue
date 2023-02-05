@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import { POKEMON_LIST_LIMIT } from '../../configs'
-import { getPokemons } from '../../services/http/pokemon'
+import { getPokemons, getPokemonsByText } from '../../services/http/pokemon'
 import type { Pokemon } from '../../types'
 import PokemonList from '../PokemonList/PokemonList.vue'
+
+const { t } = useI18n()
 
 const pokemons = ref<Pokemon[]>([])
 const page = ref<number>(1)
 const totalPokemons = ref<number>(0)
+const searchText = ref<string>('')
 
 const paginationLength = computed(() => Math.ceil(totalPokemons.value / POKEMON_LIST_LIMIT))
 
@@ -28,6 +31,22 @@ function onPaginationChange(page: number) {
   getItems(page)
 }
 
+async function onSearchPokemons() {
+  const text = searchText.value.toLowerCase()
+
+  if (!text) {
+    getItems()
+    return
+  }
+
+  const response = await getPokemonsByText(text)
+
+  if (!response.isOk)
+    return
+
+  pokemons.value = response.result
+}
+
 function onCreate() {
   getItems()
 }
@@ -40,6 +59,16 @@ onCreate()
     class="ss-pokemons-viewer"
     test-id="pokemons-viewer"
   >
+    <div class="ss-pokemons-viewer__search">
+      <Input
+        v-model="searchText"
+        :label="t('$components.PokemonsViewer.searchByName')"
+        prepend-icon="search"
+        name="search-pokemon-by-name"
+        @input="onSearchPokemons"
+      />
+    </div>
+
     <PokemonList :pokemons="pokemons" />
 
     <div class="ss-pokemons-viewer__pagination">
@@ -56,6 +85,10 @@ onCreate()
 <style lang="scss">
 $gap: $input-gutter;
 $pagination-height: 72px;
+
+.ss-pokemons-viewer__search {
+  margin-bottom: $input-gutter;
+}
 
 .ss-pokemons-viewer__cards {
   display: grid;

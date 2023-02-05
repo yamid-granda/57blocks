@@ -18,3 +18,5 @@ $components:
     invalidCredentialsError: Invalid password or email
   FavoritePokemonsViewer:
     notFoundError: You not has favorite pokemons
+  PokemonsViewer:
+    searchByName: Search pokemon by text name
