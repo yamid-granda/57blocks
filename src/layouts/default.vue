@@ -21,9 +21,7 @@ if (!isUserLoggedIn.value)
     class="ss-default-template"
   >
     <main v-if="isUserLoggedIn">
-      <AppContainer>
-        <RouterView />
-      </AppContainer>
+      <AppContainer />
     </main>
 
     <Navigation

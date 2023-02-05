@@ -1,9 +1,7 @@
 <template>
   <div>
     <main>
-      <AppContainer>
-        <RouterView />
-      </AppContainer>
+      <AppContainer />
     </main>
   </div>
 </template>
