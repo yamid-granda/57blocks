@@ -9,6 +9,11 @@ const { t } = useI18n()
 const favoritePokemonsByUserId = ref<Record<string, FavoritePokemonsDic>>({})
 
 const pokemons = computed<Pokemon[]>(() => {
+  const hasFavoritePokemonsByUserId = Boolean(Object.keys(favoritePokemonsByUserId.value).length)
+
+  if (!hasFavoritePokemonsByUserId)
+    return []
+
   const pokemonsDic = favoritePokemonsByUserId.value[loggedUser.value.id]
   return Object.values(pokemonsDic).map(pokemon => ({ ...pokemon, isFavorite: true }))
 })
