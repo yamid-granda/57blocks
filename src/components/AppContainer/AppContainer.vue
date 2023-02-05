@@ -2,19 +2,21 @@
 
 <template>
   <div class="ss-app-container">
-    <slot>
-      <RouterView v-slot="{ Component }">
-        <transition
-          mode="out-in"
-          enter-from-class="ss-app-container__transition"
-          leave-to-class="ss-app-container__transition"
-          enter-active-class="ss-app-container__transition-active"
-          leave-active-class="ss-app-container__transition-active"
-        >
-          <component :is="Component" />
-        </transition>
-      </RouterView>
-    </slot>
+    <AppWrap>
+      <slot>
+        <RouterView v-slot="{ Component }">
+          <transition
+            mode="out-in"
+            enter-from-class="ss-app-container__transition"
+            leave-to-class="ss-app-container__transition"
+            enter-active-class="ss-app-container__transition-active"
+            leave-active-class="ss-app-container__transition-active"
+          >
+            <component :is="Component" />
+          </transition>
+        </RouterView>
+      </slot>
+    </AppWrap>
 
     <PageNotifications />
   </div>
@@ -22,8 +24,8 @@
 
 <style lang="scss">
 .ss-app-container {
-  padding: $gutter-page;
-  padding-bottom: $page-navigation-height;
+  padding: $gutter-page 0;
+  padding-bottom: $page-navigation-height + $input-height + $spacing-6;
 }
 
 .ss-app-container__transition {
@@ -39,7 +41,7 @@
 
 @include lg {
   .ss-app-container {
-    padding: $gutter-page-lg;
+    padding: $gutter-page-lg 0;
     padding-bottom: $page-navigation-height + $input-height + $spacing-6;
   }
 }

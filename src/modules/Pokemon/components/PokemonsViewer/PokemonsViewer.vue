@@ -72,12 +72,14 @@ onCreate()
     <PokemonList :pokemons="pokemons" />
 
     <div class="ss-pokemons-viewer__pagination">
-      <Pagination
-        v-model="page"
-        :length="paginationLength"
-        name="pokemons-pagination"
-        @change="onPaginationChange"
-      />
+      <AppWrap>
+        <Pagination
+          v-model="page"
+          :length="paginationLength"
+          name="pokemons-pagination"
+          @change="onPaginationChange"
+        />
+      </AppWrap>
     </div>
   </div>
 </template>
@@ -95,6 +97,7 @@ $pagination-height: 72px;
   bottom: $page-navigation-height;
   left: 0;
   width: 100%;
+  padding: $spacing-4 0 $spacing-3;
   background-color: $color-paper-3;
 }
 </style>
