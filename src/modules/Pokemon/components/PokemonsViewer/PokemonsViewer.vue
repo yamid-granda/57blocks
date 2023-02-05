@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import PokemonCard from '../PokemonCard/PokemonCard.vue'
 import { POKEMON_LIST_LIMIT } from '../../configs'
 import { getPokemons } from '../../services/http/pokemon'
 import type { Pokemon } from '../../types'
-import toggleFavoritePokemon from '../../utils/toggleFavoritePokemon'
-import { ViewPath } from '~/configs/ViewPath'
-import { getPath } from '~/utils/getPath'
+import PokemonList from '../PokemonList/PokemonList.vue'
 
 const pokemons = ref<Pokemon[]>([])
 const page = ref<number>(1)
@@ -31,19 +28,11 @@ function onPaginationChange(page: number) {
   getItems(page)
 }
 
-function onPickFavorite(pokemon: Pokemon) {
-  toggleFavoritePokemon(pokemon)
-}
-
 function onCreate() {
   getItems()
 }
 
 onCreate()
-
-function getPokemonDetailPath(pokemon: Pokemon): string {
-  return getPath(ViewPath.POKEMON_DETAIL, { params: { pokemonId: pokemon.id } })
-}
 </script>
 
 <template>
@@ -51,20 +40,7 @@ function getPokemonDetailPath(pokemon: Pokemon): string {
     class="ss-pokemons-viewer"
     test-id="pokemons-viewer"
   >
-    <div class="ss-pokemons-viewer__cards">
-      <div
-        v-for="pokemon in pokemons"
-        :key="pokemon.id"
-        class="ss-pokemons-viewer__card"
-      >
-        <router-link :to="getPokemonDetailPath(pokemon)">
-          <PokemonCard
-            :pokemon="pokemon"
-            @favorite="onPickFavorite"
-          />
-        </router-link>
-      </div>
-    </div>
+    <PokemonList :pokemons="pokemons" />
 
     <div class="ss-pokemons-viewer__pagination">
       <Pagination
