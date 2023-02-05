@@ -46,20 +46,25 @@ function onPickFavorite(pokemon: Pokemon) {
 </template>
 
 <style lang="scss">
-$gap: $input-gutter;
+$gap: $input-padding;
 $pagination-height: 72px;
 
 .ss-pokemon-list {
   display: grid;
   align-content: start;
   gap: $gap;
-  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(156px, auto));
 
   .ss-pokemon-card__img {
     display: flex;
-    height: 160px;
     align-items: center;
     justify-content: center;
+    margin: $spacing-5 auto $spacing-7;
+
+    img {
+      max-width: 240px;
+      height: 120px;
+    }
   }
 }
 </style>

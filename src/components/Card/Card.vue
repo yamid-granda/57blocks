@@ -9,7 +9,7 @@
 <style lang="scss">
 .ss-card {
   flex-grow: 1;
-  padding: $input-gutter;
+  padding: $input-padding;
   border-radius: $border-radius-base;
   background-color: $color-paper-2;
   color: $color-text;
@@ -28,7 +28,7 @@
   }
 
   & + & {
-    margin-top: $input-gutter;
+    margin-top: $input-padding;
   }
 }
 </style>

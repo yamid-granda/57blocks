@@ -27,7 +27,6 @@ function onFavoriteClick() {
   >
     <Card>
       <div class="ss-pokemon-card__name">
-        {{ pokemon.id }}
         {{ pokemon.name }}
       </div>
 
@@ -35,7 +34,11 @@ function onFavoriteClick() {
         <PokemonImg :pokemon="pokemon" />
       </div>
 
-      <div class="ss-pokemon-card__actions">
+      <div class="ss-pokemon-card__id">
+        {{ pokemon.id }}
+      </div>
+
+      <div class="ss-pokemon-card__favorite">
         <FavoriteButton
           :is-active="pokemon.isFavorite"
           @click.prevent="onFavoriteClick"
@@ -47,6 +50,8 @@ function onFavoriteClick() {
 
 <style lang="scss">
 .ss-pokemon-card {
+  position: relative;
+
   &:hover {
     .ss-card {
       background-color: $color-paper-1;
@@ -54,18 +59,16 @@ function onFavoriteClick() {
   }
 }
 
-.ss-pokemon-card__img {
-  width: 116px;
-  height: 160px;
-
-  img {
-    max-height: 320px;
-  }
+.ss-pokemon-card__id {
+  position: absolute;
+  bottom: $input-padding;
+  left: $input-padding;
 }
 
-.ss-pokemon-card__actions {
-  display: flex;
-  justify-content: flex-end;
+.ss-pokemon-card__favorite {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .ss-pokemon-card__name {
