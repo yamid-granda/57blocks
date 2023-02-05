@@ -8,17 +8,13 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Alert: typeof import('./components/Alert/Alert.vue')['default']
-    'Alert.story': typeof import('./components/Alert/Alert.story.vue')['default']
     AppContainer: typeof import('./components/AppContainer/AppContainer.vue')['default']
     Button: typeof import('./components/Button/Button.vue')['default']
-    'Button.story': typeof import('./components/Button/Button.story.vue')['default']
     Card: typeof import('./components/Card/Card.vue')['default']
-    'Card.story': typeof import('./components/Card/Card.story.vue')['default']
     FavoriteButton: typeof import('./components/FavoriteButton/FavoriteButton.vue')['default']
     FormItem: typeof import('./components/FormItem/FormItem.vue')['default']
     Input: typeof import('./components/Input/Input.vue')['default']
     Loader: typeof import('./components/Loader/Loader.vue')['default']
-    'Loader.story': typeof import('./components/Loader/Loader.story.vue')['default']
     Login: typeof import('./components/Login/Login.vue')['default']
     Navigation: typeof import('./components/Navigation/Navigation.vue')['default']
     PageNotifications: typeof import('./components/PageNotifications/PageNotifications.vue')['default']
