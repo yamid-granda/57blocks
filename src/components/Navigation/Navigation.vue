@@ -47,12 +47,6 @@ withDefaults(defineProps<NavigationProps>(), {
   justify-content: center;
   padding: 0 $input-padding;
   gap: $input-padding;
-
-  &:hover {
-    .ss-navigation__background {
-      opacity: $opacity-dark;
-    }
-  }
 }
 
 .ss-navigation__background {
