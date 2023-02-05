@@ -1,0 +1,73 @@
+<script lang="ts" setup>
+import type { Pokemon } from '../../types'
+import toggleFavoritePokemon from '../../utils/toggleFavoritePokemon'
+import PokemonCard from '../PokemonCard/PokemonCard.vue'
+import { ViewPath } from '~/configs/ViewPath'
+import { getPath } from '~/utils/getPath'
+
+interface PokemonListProps {
+  pokemons: Pokemon[]
+}
+
+defineProps<PokemonListProps>()
+
+const emit = defineEmits<{
+  (event: 'click-favorite', data: Pokemon): void
+}>()
+
+function getPokemonDetailPath(pokemon: Pokemon): string {
+  return getPath(ViewPath.POKEMON_DETAIL, { params: { pokemonId: pokemon.id } })
+}
+
+function onPickFavorite(pokemon: Pokemon) {
+  toggleFavoritePokemon(pokemon)
+  emit('click-favorite', pokemon)
+}
+</script>
+
+<template>
+  <div
+    class="ss-pokemon-list"
+    test-id="pokemon-list"
+  >
+    <div
+      v-for="pokemon in pokemons"
+      :key="pokemon.id"
+      class="ss-pokemon-list__card"
+    >
+      <router-link :to="getPokemonDetailPath(pokemon)">
+        <PokemonCard
+          :pokemon="pokemon"
+          @favorite="onPickFavorite"
+        />
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+$gap: $input-gutter;
+$pagination-height: 72px;
+
+.ss-pokemon-list {
+  display: grid;
+  overflow: auto;
+  height: calc(100vh - (($gutter-page * 2) + $pagination-height + $page-navigation-height));
+  align-content: start;
+  gap: $gap;
+  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+
+  .ss-pokemon-card__img {
+    display: flex;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@include lg {
+  .ss-pokemon-list {
+    height: calc(100vh - ($gutter-page-lg + $pagination-height + $page-navigation-height));
+  }
+}
+</style>
