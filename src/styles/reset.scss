@@ -45,12 +45,20 @@ textarea {
 
 /* Anchors */
 a {
-  color: var(--color-primary);
-  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-a:hover {
-  color: var(--color-primary-hover);
+p {
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--color-primary-hover);
+  }
 }
 
 /* Headings */
