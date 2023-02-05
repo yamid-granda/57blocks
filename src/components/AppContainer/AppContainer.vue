@@ -23,6 +23,7 @@
 <style lang="scss">
 .ss-app-container {
   padding: $gutter-page;
+  padding-bottom: $page-navigation-height;
 }
 
 .ss-app-container__transition {
@@ -39,7 +40,7 @@
 @include lg {
   .ss-app-container {
     padding: $gutter-page-lg;
-    border-bottom-width: 0;
+    padding-bottom: $page-navigation-height + $input-height + $spacing-6;
   }
 }
 </style>

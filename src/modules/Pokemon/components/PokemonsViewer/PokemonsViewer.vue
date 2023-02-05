@@ -90,29 +90,11 @@ $pagination-height: 72px;
   margin-bottom: $input-gutter;
 }
 
-.ss-pokemons-viewer__cards {
-  display: grid;
-  overflow: auto;
-  height: calc(100vh - (($gutter-page * 2) + $pagination-height + $page-navigation-height));
-  align-content: start;
-  gap: $gap;
-  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
-
-  .ss-pokemon-card__img {
-    display: flex;
-    height: 160px;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
 .ss-pokemons-viewer__pagination {
-  margin-top: $gap;
-}
-
-@include lg {
-  .ss-pokemons-viewer__cards {
-    height: calc(100vh - ($gutter-page-lg + $pagination-height + $page-navigation-height));
-  }
+  position: fixed;
+  bottom: $page-navigation-height;
+  left: 0;
+  width: 100%;
+  background-color: $color-paper-3;
 }
 </style>

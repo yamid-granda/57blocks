@@ -51,8 +51,6 @@ $pagination-height: 72px;
 
 .ss-pokemon-list {
   display: grid;
-  overflow: auto;
-  height: calc(100vh - (($gutter-page * 2) + $pagination-height + $page-navigation-height));
   align-content: start;
   gap: $gap;
   grid-template-columns: repeat(auto-fit, minmax(160px, auto));
@@ -62,12 +60,6 @@ $pagination-height: 72px;
     height: 160px;
     align-items: center;
     justify-content: center;
-  }
-}
-
-@include lg {
-  .ss-pokemon-list {
-    height: calc(100vh - ($gutter-page-lg + $pagination-height + $page-navigation-height));
   }
 }
 </style>
