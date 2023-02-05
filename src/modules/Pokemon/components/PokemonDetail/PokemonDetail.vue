@@ -49,7 +49,7 @@ onCreate()
     </template>
 
     <template v-else>
-      <Card>
+      <Card class="ss-pokemon-detail__card">
         <h1 class="ss-pokemon-detail__title">
           {{ pokemon.id }}  {{ pokemon.name }}
         </h1>
@@ -84,6 +84,10 @@ onCreate()
 .ss-pokemon-detail {
   max-width: 320px;
   margin: 0 auto;
+}
+
+.ss-pokemon-detail__card {
+  padding: $input-gutter;
 }
 
 .ss-pokemon-detail__abilities-title {
