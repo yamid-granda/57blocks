@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { isUserLoggedIn, setLoggedUser } from '~/composables/loggedUser'
 import { ViewPath } from '~/configs/ViewPath'
-import { getLoggedUserFromLocalStorage } from '~/services/localStorage/loggedUser'
+import { getLoggedUserFromLocalStorage } from '~/modules/Login/services/localStorage/login'
 
 const { t } = useI18n()
 const router = useRouter()

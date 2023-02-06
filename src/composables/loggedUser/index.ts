@@ -1,4 +1,7 @@
-import { addLoggedUserInLocalStorage, removeLoggedUserFromLocalStorage } from '~/services/localStorage/loggedUser'
+import {
+  addLoggedUserInLocalStorage,
+  removeLoggedUserFromLocalStorage,
+} from '~/modules/Login/services/localStorage/login'
 
 export interface LoggedUser {
   id: string
