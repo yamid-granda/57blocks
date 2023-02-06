@@ -1,6 +1,33 @@
 # 57BLOCKS Front-End Test
 
+## Demo
+
 [👉👉👉 Check the demo video here 👈👈👈](https://drive.google.com/file/d/1kjy6B5x6xnPQ_mA9i0-ug-wTEYbwsgxZ/view?usp=sharing)
+
+## Dummy Users
+
+Use the following available dummy users to access into the pokemon app
+
+```json
+{
+  "dummy-id-1": {
+    "email": "mail@mail.com",
+    "password": "123456"
+  },
+  "dummy-id-2": {
+    "email": "57blocks@57blocks.com",
+    "password": "123456"
+  },
+  "dummy-id-3": {
+    "email": "test@test.com",
+    "password": "123456"
+  },
+  "dummy-id-4": {
+    "email": "admin@admin.com",
+    "password": "123456"
+  }
+}
+```
 
 ## Min Requirements
 
