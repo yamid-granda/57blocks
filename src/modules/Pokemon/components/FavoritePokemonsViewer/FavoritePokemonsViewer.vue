@@ -14,7 +14,7 @@ const pokemons = computed<Pokemon[]>(() => {
   if (!hasFavoritePokemonsByUserId)
     return []
 
-  const pokemonsDic = favoritePokemonsByUserId.value[loggedUser.value.id]
+  const pokemonsDic = favoritePokemonsByUserId.value[loggedUser.value.id] || {}
   return Object.values(pokemonsDic).map(pokemon => ({ ...pokemon, isFavorite: true }))
 })
 
