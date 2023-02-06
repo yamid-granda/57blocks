@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const route = useRoute()
+
+watch(() => route.path, () => {
+  window.scrollTo(0, 0)
+})
+</script>
 
 <template>
   <div class="ss-app-container">
