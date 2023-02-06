@@ -83,7 +83,7 @@ onCreate()
 
     <Loader v-show="isLoadingPokemons" />
 
-    <template v-if="!hasPokemons">
+    <template v-if="!isLoadingPokemons && !hasPokemons">
       <Alert state="warning">
         {{ t('$components.PokemonsViewer.noPokemonsError') }}
       </Alert>
