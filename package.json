@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "preview-https": "serve dist",
     "tdd": "vitest",
-    "test:unit": "vitest",
+    "test": "vitest --run",
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I"
   },
